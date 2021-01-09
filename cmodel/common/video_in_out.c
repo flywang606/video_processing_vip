@@ -1,4 +1,7 @@
-
+#include <stdio.h>
+#include <stdlib.h>
+#define u32 unsignd int
+#define u8 unsignd char
 //rgb888
 int gen_rgb_memory_bin(char *file_in)
 {
