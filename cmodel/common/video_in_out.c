@@ -11,6 +11,7 @@ int gen_rgb_memory_bin(char *file_in)
 	fp = fopen(file_in,"rb");
 	if(fp == NULL)
 	{
+	    printf("open error\n");
 		return -1;
 	}
 	
@@ -40,7 +41,18 @@ int gen_rgb_memory_bin(char *file_in)
 	
 	fread(data,sizeof(u8),image_w*image_h*3,fp);
 	//data[i] data[i+1] data[i+2] r g b
-	
+#ifdef HDL_SIM
+    FILE *hdl_fp;
+    hdl_fp = fopen("./../IMG_BIN.bin","wb");
+    if(hdl_fp == NULL)
+	{
+	    printf("hdl open error\n");
+		return -1;
+	}
+    fwrite(data,sizeof(u8),image_w*image_h*3,hdl_fp);
+    fclose(hdl_fp);
+#endif
+    
 	free(data);
 	fclose(fp);
 	
@@ -49,7 +61,7 @@ int gen_rgb_memory_bin(char *file_in)
 
 //yuv422(yu16) yuv420(nv12)
 //output:y u v 3 binary
-void gen_yuv_memory_bin(FILE *fp,)
+void gen_yuv_memory_bin(FILE *fp)
 {
 	
 }
