@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define u32 unsignd int
-#define u8 unsignd char
+
+#define u32 unsigned int
+#define u8 unsigned char
 //rgb888
 int gen_rgb_memory_bin(char *file_in)
 {
@@ -29,7 +30,7 @@ int gen_rgb_memory_bin(char *file_in)
 	}
 	
 	c = getc(fp);
-	while(c == "#")
+	while(c == '#')
 	{
 		while(getc(fp) != '\n');
 			c = getc(fp);
