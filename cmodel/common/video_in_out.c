@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "video_unit.h"
 
-#define u32 unsigned int
-#define u8 unsigned char
 //rgb888
 int gen_rgb_memory_bin(char *file_in)
 {
