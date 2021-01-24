@@ -1,5 +1,6 @@
 #ifndef VIDEO_UNIT_H
 #define VIDEO_UNIT_H
+#include <stdio.h>
 #include "typedef.h"
 
 #define CLIP(a,b,c) (((a>=b)&&(b>=c))||((c>=b) && (b>=a)))?b:((((b>=a) && (a>=c))||((c>=a) && (a>=b)))?a:c)
