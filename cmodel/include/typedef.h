@@ -9,4 +9,5 @@
 #define s16 short
 #define s32 int
 
+#define LINBUF_MAX (2048)
 #endif

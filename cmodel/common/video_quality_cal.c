@@ -131,5 +131,7 @@ double img_snr_gain(struct img_t *pimg_orig,struct img_t *pimg_noise,
         }
     }
 
+    printf("snr gain:%f\n",10*log10(sub_orig_noise/sub_orig_denoise));
+
     return 10*log10(sub_orig_noise/sub_orig_denoise);
 }
